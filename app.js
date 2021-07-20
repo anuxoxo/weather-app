@@ -1,8 +1,8 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const axios = require('axios');
 const bodyParser = require('body-parser');
-const { apiKey } = require('./key');
 var PORT = process.env.PORT;
 
 if (PORT == "" || PORT == null) {
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
 
     const city = (req.body.cityInput).trim();
-    // const apiKey = key;
+    const apiKey = process.env.apiKey;
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + apiKey;
 
     axios.get(url)
