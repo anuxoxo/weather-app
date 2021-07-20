@@ -1,0 +1,20 @@
+<%- include("partials/header"); -%>
+
+    <div class="container">
+        <div id="box">
+            <img src=<%=imgUrl %> alt="weather-img" class="logo-100">
+            <div class="temp">
+                <h5 class="city-name">
+                    <%= title %>
+                </h5>
+                <h2>
+                    <%= temp %> &deg;C
+                </h2>
+                <h4 class="desc">
+                    <%= desc %>
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer"); -%>
